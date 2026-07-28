@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which content will decline next month? — Arshad Ali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14171C;
+    --paper:#FAFAF9;
+    --signal:#1B7A6B;
+    --accent:#33415C;
+    --hair:#DEDCD3;
+    --warn:#C00000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 120px;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:var(--signal);}
+
+  /* header / hero */
+  header{margin-bottom:72px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.25;
+    letter-spacing:-0.5px;
+    margin-bottom:28px;
+  }
+  .abstract{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:10px;
+    padding:28px 30px;
+    font-size:16px;
+  }
+  .abstract .label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--signal);
+    display:block;
+    margin-bottom:10px;
+  }
+  .byline{
+    margin-top:20px;
+    font-size:14px;
+    color:var(--accent);
+  }
+  .byline a{color:var(--accent);text-decoration:underline;}
+
+  /* sections */
+  section{margin-bottom:64px;}
+  h2{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--signal);
+    border-bottom:1px solid var(--hair);
+    padding-bottom:10px;
+    margin-bottom:24px;
+  }
+  h3{
+    font-family:'JetBrains Mono',monospace;
+    font-size:16px;
+    margin:24px 0 10px;
+  }
+  p{margin-bottom:16px;max-width:66ch;}
+  strong{font-weight:600;}
+  .lede{font-size:19px;color:var(--ink);}
+
+  /* figure blocks */
+  figure{margin:28px 0 32px;}
+  figure img{width:100%;border-radius:8px;border:1px solid var(--hair);}
+  figcaption{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--accent);
+    margin-top:10px;
+    padding-left:14px;
+    border-left:2px solid var(--signal);
+  }
+
+  /* the leakage callout - signature element */
+  .signature{
+    background:#FDEEEE;
+    border:1px solid #F0C6C6;
+    border-radius:10px;
+    padding:24px 26px;
+    margin:32px 0;
+  }
+  .signature .tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--warn);
+    display:block;
+    margin-bottom:8px;
+  }
+
+  /* tables */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0 8px;
+    font-size:15px;
+  }
+  th, td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--hair);
+  }
+  th{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    color:var(--accent);
+  }
+  td.num, th.num{text-align:right;font-family:'JetBrains Mono',monospace;}
+  tr.highlight td{background:#EAF6EC;font-weight:600;}
+
+  /* limitations */
+  .limits ul{padding-left:20px;margin-bottom:16px;}
+  .limits li{margin-bottom:10px;max-width:64ch;}
+
+  /* no-go box */
+  .nogo{
+    background:var(--paper);
+    border:1px solid var(--hair);
+    border-left:3px solid var(--accent);
+    border-radius:6px;
+    padding:18px 22px;
+    margin:18px 0;
+  }
+  .nogo .label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--accent);
+    display:block;
+    margin-bottom:8px;
+  }
+  .nogo ul{padding-left:18px;}
+  .nogo li{margin-bottom:6px;}
+
+  footer{
+    margin-top:80px;
+    padding-top:28px;
+    border-top:1px solid var(--hair);
+    font-size:14px;
+    color:var(--accent);
+  }
+  footer a{color:var(--signal);}
+  .repro-links{
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    line-height:2;
+  }
+
+  @media (max-width:600px){
+    .wrap{padding:40px 18px 80px;}
+    body{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">FlyRank ML Internship — Applied Search Intelligence</div>
+    <h1>Which content will decline next month — and can a simple model flag it before it's obvious?</h1>
+
+    <div class="abstract">
+      <span class="label">Abstract</span>
+      <p style="margin-bottom:0;">A content reviewer can only manually check a fraction of a client's pages each cycle, so this work asks: which pages are most likely to see a click decline next month? Using one month of real search-performance data (March 2026) to predict the following month's outcome (April 2026), a Random Forest model ranking pages by predicted decline risk reached a Precision@50 of 0.780 on an honest, client-grouped validation split — clearly ahead of a transparent hand-written rule (0.640) and a plain random baseline (0.331). The same model scored 0.920 under a naive random split, a result driven by data leakage rather than real skill, and discarded in favor of the honest number. This page reports the ranked recommendations, their limits, and exactly how the honest number was earned.</p>
+    </div>
+
+    <div class="byline">
+      By Arshad Ali · <a href="https://github.com/sarshadad-codeee/FlyRank_ML_Task1">Repository</a> · Built on the FlyRank ML Internship dataset
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2>01 — Introduction</h2>
+    <p class="lede">A content strategist reviewing a client's site can't look at every page every week. They can look at fifty.</p>
+    <p>The question this work answers is simple to state and easy to get wrong: <strong>of everything in a client's content library, which fifty pages are most worth a human's limited attention this cycle?</strong> Picking wrong has two different costs — a wasted review on a page that was fine, or a silently worsening page that never got flagged at all. The second is worse, because it compounds.</p>
+    <p>A rule-of-thumb answer already exists inside FlyRank's own workflow: flag pages that are visible (real impressions) but poorly positioned. It's transparent, and it beats picking pages at random. The question this paper actually investigates is whether a model trained on real, validated data can beat that rule honestly — and what happens to the answer once the validation design itself is put under scrutiny.</p>
+  </section>
+
+  <section id="data">
+    <h2>02 — Data</h2>
+    <p>This work uses the FlyRank internship warehouse release (Hugging Face, gated, roughly 79 million rows), specifically the <span class="mono">fact_content_daily_performance</span> table, filtered to two month partitions: <strong>March 2026</strong> for every feature, and <strong>April 2026</strong> used only to determine whether a page's clicks declined the following month.</p>
+    <p>Rows without a genuine <span class="mono">gsc_data_available</span> flag were excluded — much of the raw fact table is a zero-filled placeholder for dates before a client's tracking began, not a real zero-activity day. After filtering, roughly <strong>55 of 104 total clients</strong> had usable March data — just over half the client base, a real coverage gap carried honestly through to the limitations below.</p>
+    <p>No client names, domains, URLs, page titles, or raw search queries appear anywhere in this work — only pseudonymized IDs, used strictly to group and validate, never as model inputs. FlyRank's own internal product-decision fields were deliberately excluded from the feature set, so the model learns from observable behavior, not from a decision FlyRank's product already made.</p>
+  </section>
+
+  <section id="methodology">
+    <h2>03 — Methodology</h2>
+    <p>The label is built the honest way: <span class="mono">is_declining = 1</span> if a page's April clicks were lower than its March clicks, else 0. Critically, this label is built from a genuinely <em>future</em> month relative to the features — not from the same period being used to predict itself, a trap this project's own earlier data-contract work caught and corrected.</p>
+
+    <h3>Features (4, all knowable at the March decision point)</h3>
+    <table>
+      <tr><th>Feature</th><th>What it captures</th></tr>
+      <tr><td class="mono">march_clicks</td><td>trailing observed clicks</td></tr>
+      <tr><td class="mono">march_impressions</td><td>trailing observed search visibility</td></tr>
+      <tr><td class="mono">avg_position</td><td>true weighted average search position</td></tr>
+      <tr><td class="mono">ctr</td><td>click-through rate on real traffic</td></tr>
+    </table>
+
+    <h3>Validation design</h3>
+    <p>Every page belonging to one client stays entirely on one side of the train/test split — never mixed. This matters more than it sounds: a client's own quirks (a particularly good or bad content strategy) could otherwise leak between train and test, letting a model "cheat" by partially recognizing a client it has already seen, rather than learning something a genuinely new client would benefit from. The next section shows exactly what happens when this rule is skipped.</p>
+
+    <h3>Leakage checks performed</h3>
+    <p>Confirmed no April data appears in any feature. Confirmed no feature is mathematically derived from the label within the same time window. Confirmed no single feature dominates the model suspiciously (all four contribute; the top feature sits at 0.48 importance, not 0.90+). Confirmed no FlyRank internal product-decision field was used as an input.</p>
+  </section>
+
+  <section id="results">
+    <h2>04 — Results</h2>
+    <p>Three approaches were compared on the exact same held-out test set, the same metric, in the same run: a plain random baseline, FlyRank's existing hand-written rule, and two trained models.</p>
+
+    <table>
+      <tr><th>Approach</th><th class="num">Precision@50</th></tr>
+      <tr><td>Base rate (random)</td><td class="num">0.331</td></tr>
+      <tr><td>Baseline rule (hand-written)</td><td class="num">0.640</td></tr>
+      <tr><td>Logistic Regression</td><td class="num">0.660</td></tr>
+      <tr class="highlight"><td>Random Forest</td><td class="num">0.780</td></tr>
+    </table>
+
+    <figure>
+      <img src="img/model_vs_baseline.png" alt="Bar chart comparing Precision at 50 across base rate, baseline rule, logistic regression, and random forest">
+      <figcaption>Random Forest observes the strongest ranking precision on the honest, client-grouped split — a real, non-trivial lift over the hand-written rule, not just added complexity.</figcaption>
+    </figure>
+
+    <div class="signature">
+      <span class="tag">The result that mattered most to get right</span>
+      <p style="margin-bottom:0;">The same Random Forest model, evaluated instead under a <strong>naive random row-level split</strong>, reports Precision@50 = <strong>0.920</strong> — a striking 14-point jump. It looks like a better model. It isn't. That split let 44 of the same clients' pages appear on both sides of the train/test divide, so part of that score is the model partially recognizing clients it already learned from, not genuine skill on unseen ones.</p>
+    </div>
+
+    <figure>
+      <img src="img/honest_vs_naive_split.png" alt="Bar chart comparing the same model's precision under an honest client-grouped split versus a naive random split">
+      <figcaption>Same model, same data, same code — the only thing that changed is the split design. The gap is the leak, not the skill.</figcaption>
+    </figure>
+
+    <p>The <strong>0.780</strong> figure is the number this paper reports and stands behind. The 0.920 figure exists on this page only to make the leakage lesson concrete.</p>
+  </section>
+
+  <section id="limitations" class="limits">
+    <h2>05 — Limitations</h2>
+    <ul>
+      <li><strong>Not causal.</strong> This is observational analysis across one snapshot in time. It shows an association between a page's March behavior and its April trajectory — not proof that any specific intervention (like a content refresh) will cause a specific outcome. No controlled experiment was run.</li>
+      <li><strong>One time window.</strong> Trained and validated on a single March→April 2026 transition. Untested on other months, seasons, or years.</li>
+      <li><strong>Partial client coverage.</strong> Only about half the client base had usable data this month; results may not generalize evenly to clients with sparser tracking history.</li>
+      <li><strong>Single-split result.</strong> The headline numbers come from one train/test split, not a cross-validated average — small variation between runs is expected and documented in this project's own reproducibility notes.</li>
+      <li><strong>Errors concentrate on already-low-performing content</strong>, where the model's strongest feature carries the least signal, since there's little room left to "decline" in absolute terms.</li>
+    </ul>
+  </section>
+
+  <section id="recommendations">
+    <h2>06 — Ranked Recommendations</h2>
+    <p>Pages are ranked by predicted decline risk and assigned one of four reason codes, so a reviewer knows not just <em>that</em> a page was flagged, but <em>why</em>.</p>
+
+    <figure>
+      <img src="img/reason_code_distribution_final.png" alt="Bar chart showing the count of pages assigned to each reason code">
+      <figcaption>Most pages land in "monitor" — the model is deliberately conservative about what it flags as urgent.</figcaption>
+    </figure>
+
+    <table>
+      <tr><th>Reason code</th><th>Action</th></tr>
+      <tr><td class="mono">high_risk_weak_position</td><td>Review for position + CTR fix</td></tr>
+      <tr><td class="mono">high_risk_low_ctr</td><td>Review for CTR fix</td></tr>
+      <tr><td class="mono">moderate_risk_watch</td><td>Monitor next cycle</td></tr>
+      <tr><td class="mono">monitor</td><td>No action needed</td></tr>
+    </table>
+
+    <div class="nogo">
+      <span class="label">What this should never do on its own</span>
+      <ul>
+        <li>Auto-publish a content change based on this score alone</li>
+        <li>Auto-message a client that their page is "declining"</li>
+        <li>Feed directly into billing or contract decisions</li>
+        <li>Let "monitor" be read as "this page has been reviewed and cleared"</li>
+      </ul>
+    </div>
+
+    <p>Every flagged page still needs a human to open it, read it, and decide — this ranks the queue, it doesn't replace the reviewer.</p>
+  </section>
+
+  <section id="reproducibility">
+    <h2>07 — Reproducibility</h2>
+    <p>Every number on this page traces back to a notebook in the linked repository, runnable end to end with a free Hugging Face account and the same random seed (42) used throughout.</p>
+    <div class="repro-links">
+      <div>→ <a href="https://github.com/sarshadad-codeee/FlyRank_ML_Task1/blob/main/work/notebooks/capstone.ipynb">capstone.ipynb</a> — this paper's full source</div>
+      <div>→ <a href="https://github.com/sarshadad-codeee/FlyRank_ML_Task1/blob/main/work/notebooks/w04_baseline_score.ipynb">w04_baseline_score.ipynb</a> — the hand-written baseline</div>
+      <div>→ <a href="https://github.com/sarshadad-codeee/FlyRank_ML_Task1/blob/main/work/notebooks/w05_model.ipynb">w05_model.ipynb</a> — the first model</div>
+      <div>→ <a href="https://github.com/sarshadad-codeee/FlyRank_ML_Task1/blob/main/work/notebooks/w06_validation_audit.ipynb">w06_validation_audit.ipynb</a> — the split audit</div>
+      <div>→ <a href="https://github.com/sarshadad-codeee/FlyRank_ML_Task1/blob/main/work/notebooks/w07_action_playbook.ipynb">w07_action_playbook.ipynb</a> — the recommendations</div>
+    </div>
+  </section>
+
+  <footer>
+    Built on the <a href="https://flyrank.ai">FlyRank ML Internship</a> dataset. Data credit and thanks to FlyRank for the applied search-intelligence release this work is built on.
+  </footer>
+
+</div>
+</body>
+</html>
